@@ -2,11 +2,13 @@
 
 1.ล็อคอินเข้าระบบ vps ด้วยไอดี root [หากยังไม่ตั้งทำตามข้อ2]
 2.[ตั้งพาสเวิร์ดroot] พิมพ์ sodu su root | พิมพ์ passwd root
+3.ก็อปปี้ด้านล่างนี้วาง เพื่อติดตั้ง
 
 sudo su
 wget https://raw.githubusercontent.com/herebird/auto-install/master/Install.sh && chmod +x ./Install.sh && ./Install.sh
 
-www.facebook.com/ceolnw
-http://m.me/ceolnw
-True wallet : 097-026-7262
 
+#www.facebook.com/ceolnw
+#http://m.me/ceolnw
+#True wallet : 097-026-7262
+#www.เฮียเบิร์ด.com
