@@ -1,1 +1,7 @@
-aa
+ก่อนการตั้งตั้งควรทำดังนี้
+1.ล็อคอินเข้าระบบ vps ด้วยไอดี root [หากยังไม่ตั้งทำตามข้อ2]
+2.[ตั้งพาสเวิร์ดroot] พิมพ์ sodu su root | พิมพ์ passwd root
+
+sudo su
+wget https://raw.githubusercontent.com/herebird/auto-install/master/Install.sh && chmod +x ./Install.sh && ./Install.sh
+
