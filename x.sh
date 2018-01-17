@@ -7,6 +7,7 @@ fi
 
 # ติดตั้งใบรับรอง
 apt-get install ca-certificates
+apt-get install sudo
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
