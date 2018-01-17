@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $USER != "root" ]]; then
-	echo "Maaf, Anda harus menjalankan ini sebagai root"
+	echo "ขออภัยคุณต้องเรียกใช้งานนี้เป็น root"
 	exit
 fi
 
@@ -10,7 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 #MYIP=$(wget -qO- ipv4.icanhazip.com);
 
-# get the VPS IP
+# ค้นหา VPS IP
 #ip=`ifconfig venet0:0 | grep 'inet addr' | awk {'print $2'} | sed s/.*://`
 
 #MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0' | head -n1`;
@@ -24,16 +24,17 @@ if [[ $ether = "" ]]; then
         ether=eth0
 fi
 
-#!/bin/bash
+
 cd
-# Change to Time GMT+8
+# ตั้งค่าเขตเวลา GMT+7
 ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
-# set locale
+
+# ตั้งค่าสถานที่
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 cd
 service ssh restart
 
-# remove unused
+# ลบบางสิ่งที่ไม่ได้ใช้
 apt-get -y --purge remove samba*;
 apt-get -y --purge remove apache2*;
 apt-get -y --purge remove sendmail*;
@@ -41,7 +42,8 @@ apt-get -y --purge remove bind9*;
 apt-get update 
 apt-get -y upgrade
 
-# Install Command
+
+# ติดตั้ง Command
 cd
 apt-get -y install ufw
 apt-get -y install sudo
@@ -63,7 +65,7 @@ service exim4 stop
 sysv-rc-conf exim4 off
 apt-file update
 
-# install neofetch
+# ติดตั้ง neofetch
 echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
 curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o Release-neofetch.key && sudo apt-key add Release-neofetch.key && rm Release-neofetch.key
 apt-get update
@@ -74,14 +76,14 @@ vnstat -u -i eth0
 chown -R vnstat:vnstat /var/lib/vnstat
 service vnstat restart
 
-# set repo
+# ตั้งค่า repo
 #wget -O /etc/apt/sources.list $source/debian7/sources.list.debian7
 #wget http://www.dotdeb.org/dotdeb.gpg
 #wget http://www.webmin.com/jcameron-key.asc
 #cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 #cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 
-# install screenfetch
+# ติดตั้ง screenfetch
 cd
 #wget $source/debian7/screenfetch-dev
 #mv screenfetch-dev /usr/bin/screenfetch
@@ -89,19 +91,19 @@ cd
 #echo "clear" >> .profile
 #echo "screenfetch" >> .profile
 
-#text gambar
+# ติดตั้ง ภาพข้อความ
 apt-get install boxes
 
-# text pelangi
+# ติดตั้ง ข้อความสีรุ้ง
 sudo apt-get install ruby
 sudo gem install lolcat
 
-# text warna
+# # กำหนด สีข้อความ
 cd
 rm -rf /root/.bashrc
 wget -O /root/.bashrc $source/debian7/.bashrc
 
-# install webserver
+# ติดตั้งเว็บเซิร์ฟเวอร์
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
@@ -123,7 +125,7 @@ service nginx restart
 #rm -f /root/pass.txt
 cd
 
-# install badvpn
+# ติดตั้ง badvpn
 wget -O /usr/bin/badvpn-udpgw $source/debian7/badvpn-udpgw
 if [[ $OS == "x86_64" ]]; then
   wget -O /usr/bin/badvpn-udpgw $source/debian7/badvpn-udpgw64
@@ -133,7 +135,7 @@ chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300
 cd
 
-# install mrtg
+# ติดตั้ง mrtg
 #apt-get update;apt-get -y install snmpd;
 #wget -O /etc/snmp/snmpd.conf $source/debian7/snmpd.conf
 #wget -O /root/mrtg-mem.sh $source/debian7/mrtg-mem.sh
@@ -153,7 +155,7 @@ cd
 #if [ -x /usr/bin/mrtg ] && [ -r /etc/mrtg.cfg ]; then mkdir -p /var/log/mrtg ; env LANG=C /usr/bin/mrtg /etc/mrtg.cfg 2>&1 | tee -a /var/log/mrtg/mrtg.log ; fi
 cd
 
-# setting port ssh
+# การตั้งค่าพอร์ต ssh
 #sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 #sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
 #sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
@@ -162,7 +164,7 @@ sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
 sed -i '$ i\Banner bannerssh' /etc/ssh/sshd_config
 service ssh restart
 
-# install dropbear
+# ติดตั้ง dropbear
 #apt-get -y update
 #apt-get -y install dropbear
 #sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
@@ -189,7 +191,7 @@ chmod 0644 /bannerssh
 service dropbear restart
 service ssh restart
 
-# upgrade dropbear 2014
+# อัพเดต dropbear 2014
 apt-get install zlib1g-dev
 wget https://matt.ucc.asn.au/dropbear/releases/dropbear-2017.75.tar.bz2
 bzip2 -cd dropbear-2017.75.tar.bz2 | tar xvf -
@@ -212,7 +214,7 @@ service dropbear restart
 #service dropbear restart
 #cd && rm -rf dropbear-2017.75 && rm -rf dropbear-2017.75.tar.bz2
 
-# install vnstat gui
+# ติดตั้ง vnstat gui
 cd /home/vps/public_html/
 wget $source/debian7/vnstat_php_frontend-1.5.1.tar.gz
 tar xvfz vnstat_php_frontend-1.5.1.tar.gz
@@ -235,16 +237,16 @@ cd
 #sed -i $MYIP2 /etc/iptables.conf;
 #iptables-restore < /etc/iptables.conf;
 
-# install fail2ban
+# ติดตั้ง fail2ban
 apt-get update;apt-get -y install fail2ban;service fail2ban restart
 
-# install squid3
+# ติดตั้ง squid3
 apt-get -y install squid3
 wget -O /etc/squid3/squid.conf $source/debian7/squid3.conf
 sed -i $MYIP2 /etc/squid3/squid.conf;
 service squid3 restart
 
-# install webmin
+# ติดตั้ง webmin
 cd
 wget http://prdownloads.sourceforge.net/webadmin/webmin_1.850_all.deb
 #wget $source/debian7/webmin_1.850_all.deb
@@ -255,7 +257,7 @@ sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 service vnstat restart
 
-# download script
+# Install script
 cd
 wget -O /usr/bin/benchmark $source/debian7/benchmark.sh
 wget -O /usr/bin/speedtest $source/debian7/speedtest_cli.py
@@ -354,7 +356,7 @@ cd
 rm -f /root/.bash_history && history -c
 echo "unset HISTFILE" >> /etc/profile
 
-# info
+# ข้อมูล
 clear
 echo "Autoscript Edited BY YUSUF-ARDIANSYAH atau (082139743432):" | lolcat
 echo "=======================================================" | lolcat
