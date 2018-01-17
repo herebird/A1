@@ -9,6 +9,33 @@ fi
 apt-get install ca-certificates
 apt-get install sudo
 apt-get install aptitude tasksel
+sudo apt-get install git-core
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+type rbenv
+rbenv is a function
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+
+apt-get install build-essential libssl-dev libcurl4-openssl-dev libreadline-dev -y
+rbenv install --list
+rbenv install 2.1.0 -k
+rbenv global 2.1.0
+ruby -v
+ruby 2.1.0p0 (2013-12-25 revision 44422) [x86_64-linux]
+sudo apt-get install sqlite3 libsqlite3-dev
+deb http://ftp.us.debian.org/debian/ wheezy-backports main
+deb-src http://ftp.us.debian.org/debian/ wheezy-backports main
+sudo apt-get update
+sudo apt-get -t wheezy-backports install nodejs
+gem install rails
+rails new mynewapplication
+cd mynewapplication
+rails s
+sudo nano /etc/apt/sources.list
+
+
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
