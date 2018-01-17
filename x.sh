@@ -6,18 +6,18 @@ if [[ $USER != "root" ]]; then
 fi
 
 # ติดตั้งใบรับรอง
-apt-get install ca-certificates
-apt-get install sudo
-apt-get install aptitude tasksel
-sudo apt-get install git-core
-git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-type rbenv
-rbenv is a function
-git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
-sudo nano /etc/apt/sources.list
+#apt-get install ca-certificates
+#apt-get install sudo
+#apt-get install aptitude tasksel
+#sudo apt-get install git-core
+#git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+#echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+#echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+#type rbenv
+#rbenv is a function
+#git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+#git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
+#sudo nano /etc/apt/sources.list
 
 
 
