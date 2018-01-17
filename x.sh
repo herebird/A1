@@ -5,6 +5,9 @@ if [[ $USER != "root" ]]; then
 	exit
 fi
 
+# ติดตั้งใบรับรอง
+apt-get install ca-certificates
+
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
