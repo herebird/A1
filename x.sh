@@ -1,18 +1,5 @@
 #!/bin/bash
 
-if [[ $USER != "root" ]]; then
-	echo "ขออภัยคุณต้องเรียกใช้งานนี้เป็น root"
-	exit
-fi
-
-# Update repositories
-sudo apt-get update
-sudo apt-get install neofetch
-
-# Add the 3rd party repo
-echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
-curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| sudo apt-key add -
-
 # Update Neofetch
 sudo apt-get update
 sudo apt-get install neofetch
@@ -29,6 +16,28 @@ cd
 rm -rf /root/.bashrc
 wget -O /root/.bashrc $source/debian7/.bashrc
 
+if [[ $USER != "root" ]]; then
+	echo "ขออภัยคุณต้องเรียกใช้งานนี้เป็น root"
+	exit
+fi
+
+# Update repositories
+sudo apt-get update
+sudo apt-get install neofetch
+
+# Add the 3rd party repo
+echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
+curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| sudo apt-key add -
+
+# Adquirindo easy-rsa
+wget -o /dev/null ~/EasyRSA-3.0.1.tgz "https://github.com/OpenVPN/easy-rsa/releases/download/3.0.1/EasyRSA-3.0.1.tgz"
+tar xzf ~/EasyRSA-3.0.1.tgz -C ~/
+mv ~/EasyRSA-3.0.1/ /etc/openvpn/
+mv /etc/openvpn/EasyRSA-3.0.1/ /etc/openvpn/easy-rsa/
+chown -R root:root /etc/openvpn/easy-rsa/
+rm -rf ~/EasyRSA-3.0.1.tgz
+cd /etc/openvpn/easy-rsa/
+
 # ติดตั้งใบรับรอง
 apt-get install ca-certificates
 apt-get install sudo
@@ -42,7 +51,6 @@ rbenv is a function
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
 #sudo nano /etc/apt/sources.list
-
 
 
 # initialisasi var
