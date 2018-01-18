@@ -5,6 +5,30 @@ if [[ $USER != "root" ]]; then
 	exit
 fi
 
+# Update repositories
+sudo apt-get update
+sudo apt-get install neofetch
+
+# Add the 3rd party repo
+echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
+curl "https://bintray.com/user/downloadSubjectPublicKey?username=bintray"| sudo apt-key add -
+
+# Update Neofetch
+sudo apt-get update
+sudo apt-get install neofetch
+
+# SETTING BOXES
+apt-get install boxes
+
+# SETTING RUBY
+sudo apt-get install ruby
+sudo gem install lolcat
+
+# SETTING HOST
+cd
+rm -rf /root/.bashrc
+wget -O /root/.bashrc $source/debian7/.bashrc
+
 # ติดตั้งใบรับรอง
 apt-get install ca-certificates
 apt-get install sudo
