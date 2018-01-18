@@ -11,6 +11,11 @@ apt-get install boxes
 sudo apt-get install ruby
 sudo gem install lolcat
 
+# Update repositories
+sudo apt-get update
+sudo apt-get install neofetch
+apt-get install gcc make
+
 # SETTING HOST
 cd
 rm -rf /root/.bashrc
@@ -20,10 +25,6 @@ if [[ $USER != "root" ]]; then
 	echo "ขออภัยคุณต้องเรียกใช้งานนี้เป็น root"
 	exit
 fi
-
-# Update repositories
-sudo apt-get update
-sudo apt-get install neofetch
 
 # Add the 3rd party repo
 echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
