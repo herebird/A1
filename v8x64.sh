@@ -1,3 +1,10 @@
+#!/bin/bash
+
+if [[ $USER != "root" ]]; then
+	echo "ขออภัยคุณต้องเรียกใช้งานนี้เป็น root"
+	exit
+fi
+
 clear
 
         echo -e "\e[034;1m
