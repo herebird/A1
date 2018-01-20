@@ -216,4 +216,6 @@ END
 	echo ""
 	echo "Selesai!"
 	echo ""
+	
 	echo "Your client config is available at ~/ovpn-$CLIENT.tar.gz"
+	
