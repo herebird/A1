@@ -199,23 +199,3 @@ cipher AES-128-CBC
 ca [inline]
 END
 	
-	cp /etc/openvpn/easy-rsa/2.0/keys/ca.crt ~/ovpn-$CLIENT
-
-	cd ~/ovpn-$CLIENT
-	
-	cp $CLIENT.conf $CLIENT.ovpn
-
-	
-	echo "<ca>" >> $CLIENT.ovpn
-	cat ca.crt >> $CLIENT.ovpn
-	echo -e "</ca>\n" >> $CLIENT.ovpn
-	
-	tar -czf ../ovpn-$CLIENT.tar.gz $CLIENT.conf ca.crt $CLIENT.ovpn
-	cd ~/
-	rm -rf ovpn-$CLIENT
-	echo ""
-	echo "Selesai!"
-	echo ""
-	
-	echo "Your client config is available at ~/ovpn-$CLIENT.tar.gz"
-	
