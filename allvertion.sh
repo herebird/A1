@@ -47,10 +47,8 @@ apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
 
 # Install Screenfetch
 cd
-wget -O /usr/bin/screenfetch "https://raw.githubusercontent.com/nwqionnwkn/OPENEXTRA/master/Config/screenfetch"
-chmod +x /usr/bin/screenfetch
-echo "clear" >> .profile
-echo "screenfetch" >> .profile
+rm -rf /root/.bashrc
+wget -O /root/.bashrc "https://raw.githubusercontent.com/khungphat84/afq8298/master/.bashrc"
 
 # Install Webserver
 cd
