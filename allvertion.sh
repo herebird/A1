@@ -65,12 +65,12 @@ clear
 			
 	echo ""
 	echo -e "\e[034;1m----SCRIPT V.1 VIP"
-	echo ""
-	echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
+	#echo ""
+	#echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
 	echo ""
 read -p "๏๏๏โปรดใส่รหัสสำหรับติดตั้งสคลิปนี้.. : " passwds
-wget -q -O /usr/bin/pass $source/config.txt
-if ! grep -w -q $passwds /usr/bin/pass; then
+wget -q -O /usr/bin/IP $source/config.txt
+if ! grep -w -q $MYIP /usr/bin/IP; then
 clear
 echo ""
 echo ""
@@ -83,45 +83,6 @@ rm /usr/bin/pass
 rm allvertion.sh
 exit
 fi
-
-# check registered ip
-wget -q -O /usr/bin/IP http://xn--l3clxf6cwbe0gd7j.com/ocspanel/connectvpn.txt
-if ! grep -w -q $MYIP IP /usr/bin/IP; then
-	echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan script ini!"
-        echo "     
-          echo -e "\e[031;1m     
-	  
-                =============== OS-32 & 64-bit ================
-                ♦                                             ♦
-                ♦     AUTOSCRIPT CREATED BY เฮียเบิร์ด แงะตลอด   ♦
-                ♦       -----------About Us------------       ♦ 
-                ♦            Telp : 097-026-7262              ♦
-                ♦         { VPN / SSH / OCS PANEL }           ♦ 
-                ♦       http://facebook.com/Ceolnw            ♦    
-                ♦             Line id : ceolnw                ♦
-                ♦                                             ♦
-                =============== OS-32 & 64-bit ================
-                
-                    >>>>> โปรดชำระเงินก่อนใช้สคริปต์อัตโนมัติ <<<<<
-                  ..........................................
-                  .         ราคา: 50 บาท = 1IP             .
-                  .        ***********************         .
-                  .        True Wallet Account             .
-                  .        =======================         .
-                  .        Phone : 097-026-7262            .
-                  .        Name  : HERE BIRD LNWSHOP       .
-                  ..........................................   
-                                      
-                           Thank You For Choice Us"
-	
-	rm /root/IP
-	rm allvertion.sh
-	rm -f /root/IP
-	exit
-fi
-
-# GO TO ROOT
-cd
 
 
 clear
