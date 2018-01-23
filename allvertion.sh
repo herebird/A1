@@ -143,7 +143,7 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...wget and curl
 [√] กำลังเริ่มติดตั้ง : wget and curl..... [ OK !! ]
 ----------------------------------------------
@@ -158,7 +158,7 @@ apt-get update;apt-get -y install wget curl;
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Location
 [√] กำลังเริ่มติดตั้ง : GMT +7..... [ OK !! ]
 ----------------------------------------------
@@ -173,7 +173,7 @@ ln -fs /usr/share/zoneinfo/Asia/Thailand /etc/localtime
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Locale
 [√] กำลังเริ่มติดตั้ง : Locale..... [ OK !! ]
 ----------------------------------------------
@@ -189,7 +189,7 @@ service ssh restart
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...repo
 [√] กำลังเริ่มติดตั้ง : repo..... [ OK !! ]
 ----------------------------------------------
@@ -214,7 +214,7 @@ cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...apt-get
 [√] กำลังเริ่มติดตั้ง : apt-get..... [ OK !! ]
 ----------------------------------------------
@@ -229,7 +229,7 @@ apt-get update
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Webserver
 [√] กำลังเริ่มติดตั้ง : Webserver..... [ OK !! ]
 ----------------------------------------------
@@ -244,7 +244,7 @@ apt-get -y install nginx
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Essential Package
 [√] กำลังเริ่มติดตั้ง : Essential Package..... [ OK !! ]
 ----------------------------------------------
@@ -259,7 +259,7 @@ apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com  
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Screenfetch
 [√] กำลังเริ่มติดตั้ง : Screenfetch..... [ OK !! ]
 ----------------------------------------------
@@ -269,14 +269,14 @@ echo "
 # INSTALL SCREENFETCH
 cd
 rm -rf /root/.bashrc
-wget -O /root/.bashrc "https://raw.githubusercontent.com/khungphat84/afq8298/master/.bashrc"
+wget -O /root/.bashrc $source/.bashrc
 
 
 
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Webserver
 [√] กำลังเริ่มติดตั้ง : Webserver..... [ OK !! ]
 ----------------------------------------------
@@ -321,7 +321,7 @@ http {
 }
 END3
 mkdir -p /home/vps/public_html
-echo "<pre>Source by Mnm Ami | Donate at TrueMoney Wallet 082-038-2600</pre>" > /home/vps/public_html/index.html
+echo "<pre>SOURCE OCSPANEL.INFO | เฮียเบิร์ด.com  WALLET 097-026-7262</pre>" > /home/vps/public_html/index.html
 echo "<?phpinfo(); ?>" > /home/vps/public_html/info.php
 args='$args'
 uri='$uri'
@@ -353,7 +353,7 @@ END4
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Vnstat
 [√] กำลังเริ่มติดตั้ง : Vnstat..... [ OK !! ]
 ----------------------------------------------
@@ -369,7 +369,7 @@ vnstat -u -i eth0
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...OpenVPN
 [√] กำลังเริ่มติดตั้ง : OpenVPN..... [ OK !! ]
 ----------------------------------------------
@@ -428,7 +428,7 @@ service openvpn restart
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Port SSH
 [√] กำลังเริ่มติดตั้ง : Port SSH..... [ OK !! ]
 ----------------------------------------------
@@ -446,7 +446,7 @@ service ssh restart
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Dropbear
 [√] กำลังเริ่มติดตั้ง : Dropbear..... [ OK !! ]
 ----------------------------------------------
@@ -468,7 +468,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Squid3
 [√] กำลังเริ่มติดตั้ง : Squid3..... [ OK !! ]
 ----------------------------------------------
@@ -515,7 +515,7 @@ sed -i $MYIP2 /etc/squid3/squid.conf;
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...Script
 [√] กำลังเริ่มติดตั้ง : Script..... [ OK !! ]
 ----------------------------------------------
@@ -536,7 +536,7 @@ echo "..... Installing 98% ...restarting service."
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...public_html
 [√] กำลังเริ่มติดตั้ง : public_html..... [ OK !! ]
 ----------------------------------------------
@@ -560,7 +560,7 @@ rm -rf ~/.bash_history && history -c
 clear
 echo "
 ----------------------------------------------
-[√] Souce : เฮียเบิร์ด.com 
+[√] Source : เฮียเบิร์ด.com 
 [√] Connect...การติดตั้งเสร็จสมบรูณ์
 [√] กำลังรวบรวม : ข้อมูลการติดตั้ง..... [ OK !! ]
 ----------------------------------------------
