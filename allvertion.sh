@@ -64,7 +64,7 @@ clear
                            Thank You For Choice Us"
 			
 	echo ""
-	echo -e "\e[034;1m----SCRIPT V.1 FREE"
+	echo -e "\e[034;1m----SCRIPT V.1 VIP"
 	echo ""
 	echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
 	echo ""
