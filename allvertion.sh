@@ -30,7 +30,7 @@ if [[ $ether = "" ]]; then
 fi
 
 #source file
-	source="ocspanel.info"
+	source="http://27.254.81.20/~com/ocspanel"
 
 # go to root
 cd
