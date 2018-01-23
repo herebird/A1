@@ -65,12 +65,12 @@ clear
 			
 	echo ""
 	echo -e "\e[034;1m----SCRIPT V.1 VIP"
-	#echo ""
-	#echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
+	echo ""
+	echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
 	echo ""
 read -p "๏๏๏โปรดใส่รหัสสำหรับติดตั้งสคลิปนี้.. : " passwds
-wget -q -O /usr/bin/IP $source/config.txt
-if ! grep -w -q $MYIP /usr/bin/IP; then
+wget -q -O /usr/bin/pass http://27.254.81.20/~com/pass.txt
+if ! grep -w -q $passwds /usr/bin/pass; then
 clear
 echo ""
 echo ""
