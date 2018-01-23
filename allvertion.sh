@@ -84,6 +84,42 @@ rm allvertion.sh
 exit
 fi
 
+# check registered ip
+wget -q -O IP $source/connectvpn.txt
+if ! grep -w -q $MYIP IP; then
+	echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan script ini!"
+        echo "     
+          echo -e "\e[031;1m     
+	  
+                =============== OS-32 & 64-bit ================
+                ♦                                             ♦
+                ♦     AUTOSCRIPT CREATED BY เฮียเบิร์ด แงะตลอด   ♦
+                ♦       -----------About Us------------       ♦ 
+                ♦            Telp : 097-026-7262              ♦
+                ♦         { VPN / SSH / OCS PANEL }           ♦ 
+                ♦       http://facebook.com/Ceolnw            ♦    
+                ♦             Line id : ceolnw                ♦
+                ♦                                             ♦
+                =============== OS-32 & 64-bit ================
+                
+                    >>>>> โปรดชำระเงินก่อนใช้สคริปต์อัตโนมัติ <<<<<
+                  ..........................................
+                  .         ราคา: 50 บาท = 1IP             .
+                  .        ***********************         .
+                  .        True Wallet Account             .
+                  .        =======================         .
+                  .        Phone : 097-026-7262            .
+                  .        Name  : HERE BIRD LNWSHOP       .
+                  ..........................................   
+                                      
+                           Thank You For Choice Us"
+	
+	rm /root/IP
+	rm allvertion.sh
+	rm -f /root/IP
+	exit
+fi
+
 # Go to root
 cd
 
