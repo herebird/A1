@@ -204,8 +204,8 @@ deb http://packages.dotdeb.org wheezy all
 deb http://download.webmin.com/download/repository sarge contrib
 deb http://webmin.mirror.somersettechsolutions.co.uk/repository sarge contrib
 END
-wget "https://raw.githubusercontent.com/nwqionnwkn/OPENEXTRA/master/Config/dotdeb.gpg"
-wget "https://raw.githubusercontent.com/nwqionnwkn/OPENEXTRA/master/Config/jcameron-key.asc"
+wget $source/Config/dotdeb.gpg
+wget $source/Config/jcameron-key.asc
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 
@@ -377,7 +377,7 @@ echo "
  sleep 5
  
 # INSTALL OPENVPN
-wget -O /etc/openvpn/openvpn.tar "https://github.com/nwqionnwkn/OPENEXTRA/raw/master/Config/openvpn.tar"
+wget -O /etc/openvpn/openvpn.tar $source/Config/openvpn.tar
 cd /etc/openvpn/
 tar xf openvpn.tar
 cat > /etc/openvpn/1194.conf <<END
@@ -528,8 +528,6 @@ wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/menu
 wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/speedtest
 chmod +x menu
 chmod +x speedtest
-echo ""
-echo "..... Installing 98% ...restarting service."
 
 
 
@@ -569,16 +567,23 @@ echo "
  
 # INFO
 clear
-echo "====================================================="
+ echo ""
+          echo -e "\e[031;1m     
+                         
+                =============== OS-32 & 64-bit ================
+                #                                             #
+                #     AUTOSCRIPT CREATED BY เฮียเบิร์ด แงะตลอด   #
+                #       -----------รายละเอียด------------      # 
+                #        [>]  OpenVPN  : TCP Port 1194"       #
+                #        [>]  OpenSSH  : Port 22, 143"        # 
+                #        [>]  Dropbear : Port 80, 443"        #    
+                #        [>]  Squid3   : Port 8080"           #
+                #                                             #
+                =============== OS-32 & 64-bit ================"
 echo ""
-echo " - OpenVPN  : TCP Port 1194"
-echo " - OpenSSH  : Port 22, 143"
-echo " - Dropbear : Port 80, 443"
-echo " - Squid3   : Port 8080"
-echo ""
-echo "====================================================="
-echo "หลังจากติดตั้งสำเร็จ... กรุณาพิมพ์คำสั่ง menu เพื่อไปยังขั้นตอนถัดไป"
-echo "====================================================="
-echo "-------- Script by Mnm Ami"
+echo "==================================================================="
+echo "       ดำเนินการเสร็จสิ้น... กรุณาพิมพ์คำสั่ง menu เพื่อไปยังขั้นตอนถัดไป"
+echo "==================================================================="
+echo "----- SCRIPT OCSPANEL.INFO / เฮียเบิร์ด.com / FACEBOOK.COM/CEOLNW------"
 cd
 rm -f /root/allvertion.sh
