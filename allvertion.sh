@@ -86,7 +86,7 @@ fi
 
 # check registered ip
 wget -q -O /usr/bin/IP http://xn--l3clxf6cwbe0gd7j.com/ocspanel/connectvpn.txt
-if ! grep -w -q $MYIP IP /usr/bin/pass; then
+if ! grep -w -q $MYIP IP /usr/bin/IP; then
 	echo "Maaf, hanya IP yang terdaftar yang bisa menggunakan script ini!"
         echo "     
           echo -e "\e[031;1m     
