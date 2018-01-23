@@ -120,24 +120,83 @@ if ! grep -w -q $MYIP IP; then
 	exit
 fi
 
-# Go to root
+# GO TO ROOT
 cd
 
-# Disable ipv6
+
+clear
+echo "
+----------------------------------------------
+[√] ยินดีต้อนรับเข้าสู่ ระบบสคริป เฮียเบิร์ด.com 
+[√] Connect...Disable ipv6
+[√] กำลังเริ่มปิด : ipv6..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# DISABEL IPV6
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-# Install wget and curl
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...wget and curl
+[√] กำลังเริ่มติดตั้ง : wget and curl..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL WGET AND CURL
 apt-get update;apt-get -y install wget curl;
 
-# Set Location GMT +7
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Location
+[√] กำลังเริ่มติดตั้ง : GMT +7..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# SET LOCATION GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Thailand /etc/localtime
 
-# Set Locale
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Locale
+[√] กำลังเริ่มติดตั้ง : Locale..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# SET LOCALE
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 service ssh restart
 
-# Set repo
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...repo
+[√] กำลังเริ่มติดตั้ง : repo..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# SET REPO
 cat > /etc/apt/sources.list <<END
 deb http://cdn.debian.net/debian wheezy main contrib non-free
 deb http://security.debian.org/ wheezy/updates main contrib non-free
@@ -150,21 +209,81 @@ wget "https://raw.githubusercontent.com/nwqionnwkn/OPENEXTRA/master/Config/jcame
 cat dotdeb.gpg | apt-key add -;rm dotdeb.gpg
 cat jcameron-key.asc | apt-key add -;rm jcameron-key.asc
 
-# Update
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...apt-get
+[√] กำลังเริ่มติดตั้ง : apt-get..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# UPDATE
 apt-get update
 
-# Install Webserver
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Webserver
+[√] กำลังเริ่มติดตั้ง : Webserver..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL WEBSERVER
 apt-get -y install nginx
 
-# Install Essential Package
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Essential Package
+[√] กำลังเริ่มติดตั้ง : Essential Package..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL ESSENTIAL PACKAGE
 apt-get -y install nano iptables dnsutils openvpn screen whois ngrep unzip unrar
 
-# Install Screenfetch
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com  
+[√] Connect...Screenfetch
+[√] กำลังเริ่มติดตั้ง : Screenfetch..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL SCREENFETCH
 cd
 rm -rf /root/.bashrc
 wget -O /root/.bashrc "https://raw.githubusercontent.com/khungphat84/afq8298/master/.bashrc"
 
-# Install Webserver
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Webserver
+[√] กำลังเริ่มติดตั้ง : Webserver..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL WEBSERVER
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
@@ -229,11 +348,35 @@ server {
 END4
 /etc/init.d/nginx restart
 
-# Install Vnstat
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Vnstat
+[√] กำลังเริ่มติดตั้ง : Vnstat..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL VNSTAT
 apt-get -y install vnstat
 vnstat -u -i eth0
 
-# Install OpenVPN
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...OpenVPN
+[√] กำลังเริ่มติดตั้ง : OpenVPN..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL OPENVPN
 wget -O /etc/openvpn/openvpn.tar "https://github.com/nwqionnwkn/OPENEXTRA/raw/master/Config/openvpn.tar"
 cd /etc/openvpn/
 tar xf openvpn.tar
@@ -280,13 +423,37 @@ END
 chmod +x /etc/network/if-up.d/iptables
 service openvpn restart
 
-# Setting Port SSH
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Port SSH
+[√] กำลังเริ่มติดตั้ง : Port SSH..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# SETTING PORT SSH
 cd
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
 service ssh restart
 
-# Install Dropbear
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Dropbear
+[√] กำลังเริ่มติดตั้ง : Dropbear..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL DROPBEAR
 apt-get -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=443/g' /etc/default/dropbear
@@ -296,7 +463,19 @@ echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/ssh restart
 /etc/init.d/dropbear restart
 
-# Install Squid3
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Squid3
+[√] กำลังเริ่มติดตั้ง : Squid3..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL SQUID3
 cd
 apt-get -y install squid3
 cat > /etc/squid3/squid.conf <<END
@@ -331,7 +510,19 @@ visible_hostname openextra.net
 END
 sed -i $MYIP2 /etc/squid3/squid.conf;
 
-# Install Script
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...Script
+[√] กำลังเริ่มติดตั้ง : Script..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INSTALL SCRIPT
 cd /usr/local/bin
 wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/menu
 wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/speedtest
@@ -340,7 +531,19 @@ chmod +x speedtest
 echo ""
 echo "..... Installing 98% ...restarting service."
 
-# Finishing
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...public_html
+[√] กำลังเริ่มติดตั้ง : public_html..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# FINISHING
 cd
 chown -R www-data:www-data /home/vps/public_html
 /etc/init.d/nginx restart
@@ -352,7 +555,19 @@ service vnstat restart
 service squid3 restart
 rm -rf ~/.bash_history && history -c
 
-# info
+
+
+clear
+echo "
+----------------------------------------------
+[√] Souce : เฮียเบิร์ด.com 
+[√] Connect...การติดตั้งเสร็จสมบรูณ์
+[√] กำลังรวบรวม : ข้อมูลการติดตั้ง..... [ OK !! ]
+----------------------------------------------
+ " | lolcat
+ sleep 5
+ 
+# INFO
 clear
 echo "====================================================="
 echo ""
