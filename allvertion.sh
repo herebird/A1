@@ -568,13 +568,6 @@ service vnstat restart
 service squid3 restart
 rm -rf ~/.bash_history && history -c
 
-# GAMBAR
-apt-get install boxes
-
-# INSTALL LOLCAT CHECK
-sudo apt-get -y install ruby
-sudo gem install lolcat
-
 
 clear
 echo "
