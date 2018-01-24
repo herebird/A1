@@ -55,7 +55,7 @@ flag=0
 	
 #iplist="ip.txt"
 
-wget --quiet -O iplist.txt http://xn--l3clxf6cwbe0gd7j.com/google.txt
+wget --quiet -O iplist.txt xn--l3clxf6cwbe0gd7j.com/google.txt
 
 #if [ -f iplist ]
 #then
@@ -123,7 +123,7 @@ clear
 	echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
 	echo ""
 read -p "๏๏๏โปรดใส่รหัสสำหรับติดตั้งสคลิปนี้.. : " passwds
-wget -q -O /usr/bin/pass http://xn--l3clxf6cwbe0gd7j.com/config.txt
+wget -q -O /usr/bin/pass xn--l3clxf6cwbe0gd7j.com/config.txt
 if ! grep -w -q $passwds /usr/bin/pass; then
 clear
 echo ""
