@@ -329,13 +329,13 @@ http {
   include /etc/nginx/conf.d/*.conf;
 }
 END3
-#mkdir -p /home/vps/public_html
-#echo "<pre>OCSPANEL.INFO | เฮียเบิร์ด.com WALLET 097-026-7262</pre>" > /home/vps/public_html/index.html
-#echo "<?phpinfo(); ?>" > /home/vps/public_html/info.php
-#args='$args'
-#uri='$uri'
-#document_root='$document_root'
-#fastcgi_script_name='$fastcgi_script_name'
+mkdir -p /home/vps/public_html
+echo "<pre>OCSPANEL.INFO | เฮียเบิร์ด.com WALLET 097-026-7262</pre>" > /home/vps/public_html/index.html
+echo "<?phpinfo(); ?>" > /home/vps/public_html/info.php
+args='$args'
+uri='$uri'
+document_root='$document_root'
+fastcgi_script_name='$fastcgi_script_name'
 cat > /etc/nginx/conf.d/vps.conf <<END4
 server {
   listen       81;
