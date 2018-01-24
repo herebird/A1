@@ -30,14 +30,14 @@ if [[ $ether = "" ]]; then
 fi
 
 #SOURCE
-#	source="http://เฮียเบิร์ด.com/ocspanel"
-vps="VPS";
-
-if [[ $vps = "VPS" ]]; then
-	source="http://ocspanel.info"
-else
 	source="http://เฮียเบิร์ด.com/ocspanel"
-fi
+#vps="VPS";
+
+#if [[ $vps = "VPS" ]]; then
+#	source="http://ocspanel.info"
+#else
+#	source="http://เฮียเบิร์ด.com/ocspanel"
+#fi
 
 
 # GO TO ROOT
