@@ -147,12 +147,6 @@ echo "
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-# GAMBAR
-apt-get install boxes
-
-# INSTALL LOLCAT CHECK
-sudo apt-get -y install ruby
-sudo gem install lolcat
 
 
 clear
@@ -568,6 +562,12 @@ service vnstat restart
 service squid3 restart
 rm -rf ~/.bash_history && history -c
 
+# GAMBAR
+apt-get install boxes
+
+# INSTALL LOLCAT CHECK
+sudo apt-get -y install ruby
+sudo gem install lolcat
 
 
 clear
