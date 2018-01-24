@@ -84,6 +84,12 @@ rm allvertion.sh
 exit
 fi
 
+# text gambar
+apt-get install boxes
+
+# install lolcat
+sudo apt-get -y install ruby
+sudo gem install lolcat
 
 clear
 echo "
