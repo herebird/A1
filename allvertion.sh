@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $USER != 'root' ]; then
-	echo "Sorry, for run the script please using root user"
+	echo "ขออภัยสำหรับการเรียกใช้สคริปต์โปรดใช้ผู้ใช้ root"
 	exit
 fi
 
