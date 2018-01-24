@@ -39,6 +39,13 @@ else
 	source="http://เฮียเบิร์ด.com/ocspanel"
 fi
 
+# GAMBAR
+apt-get install boxes
+
+# INSTALL LOLCAT CHECK
+sudo apt-get -y install ruby
+sudo gem install lolcat
+
 # GO TO ROOT
 cd
 
@@ -74,7 +81,7 @@ then
 
 rm -f /root/iplist.txt
 
-rm -f /root/Rasta-OCS.sh
+rm -f /root/allvertion.sh
 	
 	exit 1
 fi
@@ -131,12 +138,6 @@ rm allvertion.sh
 exit
 fi
 
-# text gambar
-apt-get install boxes
-
-# install lolcat
-sudo apt-get -y install ruby
-sudo gem install lolcat
 
 clear
 echo "
