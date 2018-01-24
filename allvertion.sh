@@ -5,7 +5,7 @@ if [ $USER != 'root' ]; then
 	exit
 fi
 
-# check OS
+# CHECK OS
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- ipv4.icanhazip.com);
@@ -29,7 +29,7 @@ if [[ $ether = "" ]]; then
         ether=eth0
 fi
 
-#source file
+#SOURCE
 #	source="http://เฮียเบิร์ด.com/ocspanel"
 vps="VPS";
 
@@ -39,12 +39,6 @@ else
 	source="http://เฮียเบิร์ด.com/ocspanel"
 fi
 
-# GAMBAR
-apt-get install boxes
-
-# INSTALL LOLCAT CHECK
-sudo apt-get -y install ruby
-sudo gem install lolcat
 
 # GO TO ROOT
 cd
@@ -86,10 +80,10 @@ rm -f /root/allvertion.sh
 	exit 1
 fi
 
-# go to root
+# GO TO ROOT
 cd
 
-#password
+#REGISTER CONFIG
 clear
  echo ""
           echo -e "\e[031;1m     
@@ -137,6 +131,15 @@ rm /usr/bin/pass
 rm allvertion.sh
 exit
 fi
+
+
+# GAMBAR
+apt-get install boxes
+
+# INSTALL LOLCAT CHECK
+sudo apt-get -y install ruby
+sudo gem install lolcat
+
 
 
 clear
