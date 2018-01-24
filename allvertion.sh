@@ -281,6 +281,32 @@ http {
   include /etc/nginx/conf.d/*.conf;
 }
 END3
+mkdir -p /home/vps/public_html
+echo "<pre>OCSPANEL.INFO | เฮียเบิร์ด.com WALLET 097-026-7262</pre>" > /home/vps/public_html/index.html
+echo "<?phpinfo(); ?>" > /home/vps/public_html/info.php
+args='$args'
+uri='$uri'
+document_root='$document_root'
+fastcgi_script_name='$fastcgi_script_name'
+cat > /etc/nginx/conf.d/vps.conf <<END4
+server {
+  listen       81;
+  server_name  127.0.0.1 localhost;
+  access_log /var/log/nginx/vps-access.log;
+  error_log /var/log/nginx/vps-error.log error;
+  root   /home/vps/public_html;
+  location / {
+    index  index.html index.htm index.php;
+    try_files $uri $uri/ /index.php?$args;
+  }
+  location ~ \.php$ {
+    include /etc/nginx/fastcgi_params;
+    fastcgi_pass  127.0.0.1:9000;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+  }
+}
+END4
 /etc/init.d/nginx restart
 
 
