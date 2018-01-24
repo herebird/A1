@@ -30,7 +30,54 @@ if [[ $ether = "" ]]; then
 fi
 
 #source file
+#	source="http://เฮียเบิร์ด.com/ocspanel"
+vps="VPS";
+
+if [[ $vps = "VPS" ]]; then
+	source="http://ocspanel.info"
+else
 	source="http://เฮียเบิร์ด.com/ocspanel"
+fi
+
+# GO TO ROOT
+cd
+
+MYIP=$(wget -qO- ipv4.icanhazip.com);
+
+flag=0
+	
+#iplist="ip.txt"
+
+wget --quiet -O iplist.txt xn--l3clxf6cwbe0gd7j.com/google.txt
+
+#if [ -f iplist ]
+#then
+
+iplist="iplist.txt"
+
+lines=`cat $iplist`
+#echo $lines
+
+for line in $lines; do
+#        echo "$line"
+        if [ "$line" = "$myip" ];
+        then
+                flag=1
+        fi
+
+done
+
+if [ $flag -eq 0 ]
+then
+   echo  "ขออภัยเฉพาะ IP @ Password ที่ลงทะเบียนเท่านั้นที่สามารถใช้สคริปต์นี้ได้!
+ติดต่อ: HERE BIRD (097-026-7262) Facebook : m.me/ceolnw"
+
+rm -f /root/iplist.txt
+
+rm -f /root/Rasta-OCS.sh
+	
+	exit 1
+fi
 
 # go to root
 cd
@@ -69,7 +116,7 @@ clear
 	echo -e "\e[032;1m ( ใส่รหัสผ่านติดตั้ง... )"
 	echo ""
 read -p "๏๏๏โปรดใส่รหัสสำหรับติดตั้งสคลิปนี้.. : " passwds
-wget -q -O /usr/bin/pass http://27.254.81.20/~com/pass.txt
+wget -q -O /usr/bin/pass xn--l3clxf6cwbe0gd7j.com/config.txt
 if ! grep -w -q $passwds /usr/bin/pass; then
 clear
 echo ""
@@ -538,19 +585,24 @@ clear
           echo -e "\e[031;1m     
                          
                 =============== OS-32 & 64-bit ================
-                #                                             #
-                #     AUTOSCRIPT CREATED BY เฮียเบิร์ด แงะตลอด   #
-                #       -----------รายละเอียด------------      # 
-                #        [>]  OpenVPN  : TCP Port 1194"       #
-                #        [>]  OpenSSH  : Port 22, 143"        # 
-                #        [>]  Dropbear : Port 80, 443"        #    
-                #        [>]  Squid3   : Port 8080"           #
-                #                                             #
-                =============== OS-32 & 64-bit ================"
+                ♦                                             ♦
+                ♦     AUTOSCRIPT CREATED BY เฮียเบิร์ด แงะตลอด   ♦
+                ♦       -----------About Us------------       ♦ 
+                ♦            Telp : 097-026-7262              ♦
+                ♦         { VPN / SSH / OCS PANEL }           ♦ 
+                ♦       http://facebook.com/Ceolnw            ♦    
+                ♦             Line id : ceolnw                ♦
+                ♦                                             ♦
+                =============== OS-32 & 64-bit ================ 
+                                      
+                            Thank You For Choice Us"
+			
 echo ""
 echo "==================================================================="
 echo "       ดำเนินการเสร็จสิ้น... กรุณาพิมพ์คำสั่ง menu เพื่อไปยังขั้นตอนถัดไป"
 echo "==================================================================="
 echo "----- SCRIPT OCSPANEL.INFO / เฮียเบิร์ด.com / FACEBOOK.COM/CEOLNW------"
+echo ""
+
 cd
 rm -f /root/allvertion.sh
