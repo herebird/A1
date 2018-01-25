@@ -75,7 +75,7 @@ then
 
 rm -f /root/iplist.txt
 
-rm -f /root/allvertion.sh
+rm -f /root/allvertion
 	
 	exit 1
 fi
@@ -128,7 +128,7 @@ echo " เด้งไปเลยเฟสนี้แน่นอน : www.fac
 echo ""
 echo ""
 rm /usr/bin/pass
-rm allvertion.sh
+rm allvertion
 exit
 fi
 
@@ -605,4 +605,4 @@ echo "----- SCRIPT OCSPANEL.INFO / เฮียเบิร์ด.com / FACEBOOK
 echo "" | lolcat
 
 cd
-rm -f /root/allvertion.sh
+rm -f /root/allvertion
