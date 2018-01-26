@@ -88,7 +88,7 @@ echo " เด้งไปเลยเฟสนี้แน่นอน : www.fac
 echo ""
 echo ""
 rm /usr/bin/pass
-rm allvertion
+rm allvertion.sh
 exit
 fi
 
@@ -499,8 +499,8 @@ echo "
  
 # INSTALL SCRIPT
 cd /usr/local/bin
-wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/menu
-wget https://raw.githubusercontent.com/lnwshop/demo/master/Config/speedtest
+wget https://raw.githubusercontent.com/herebird/MENU-HEREBIRD/master/menu
+wget https://raw.githubusercontent.com/herebird/MENU-HEREBIRD/master/speedtest
 chmod +x menu
 chmod +x speedtest
 
@@ -565,4 +565,4 @@ echo "----- SCRIPT OCSPANEL.INFO / เฮียเบิร์ด.com / FACEBOOK
 echo "" | lolcat
 
 cd
-rm -f /root/allvertion
+rm -f /root/allvertion.sh
