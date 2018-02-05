@@ -495,8 +495,7 @@ sed -i $MYIP2 /etc/iptables.up.rules;
 iptables-restore < /etc/iptables.up.rules
 
 # download script
-cd
-wget http://script.hostingtermurah.net/script/install-premiumscript.sh -O - -o /dev/null|sh
+
 
 # finalisasi
 apt-get -y autoremove
@@ -520,50 +519,12 @@ history -c
 # info
 clear
 echo " "
-echo "Instaslasi telah selesai! Mohon baca dan simpan penjelasan setup server!"
+echo "การติดตั้งเสร็จสิ้นแล้ว! โปรดอ่านและบันทึกคำอธิบายการตั้งค่าเซิร์ฟเวอร์!"
 echo " "
-echo "--------------------------- Penjelasan Setup Server ----------------------------"
+echo "------------------------- คำอธิบายเกี่ยวกับการตั้งค่าเซิร์ฟเวอร์ --------------------------"
 echo "                         Copyright HostingTermurah.net                          "
 echo "                        https://www.hostingtermurah.net                         "
-echo "               Created By Steven Indarto(fb.com/stevenindarto2)                 "
+echo "                    Created By เฮียเบิร์ด.com (fb.com/ceolnw)                      "
 echo "--------------------------------------------------------------------------------"
-echo ""  | tee -a log-install.txt
-echo "Informasi Server"  | tee -a log-install.txt
-echo "   - Timezone    : Asia/Jakarta (GMT +7)"  | tee -a log-install.txt
-echo "   - Fail2Ban    : [on]"  | tee -a log-install.txt
-echo "   - IPtables    : [on]"  | tee -a log-install.txt
-echo "   - Auto-Reboot : [off]"  | tee -a log-install.txt
-echo "   - IPv6        : [off]"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Informasi Aplikasi & Port"  | tee -a log-install.txt
-echo "   - OpenVPN     : TCP 1194 "  | tee -a log-install.txt
-echo "   - OpenSSH     : 22, 143"  | tee -a log-install.txt
-echo "   - Dropbear    : 109, 110, 443"  | tee -a log-install.txt
-echo "   - Squid Proxy : 80, 3128, 8000, 8080 (limit to IP Server)"  | tee -a log-install.txt
-echo "   - Badvpn      : 7300"  | tee -a log-install.txt
-echo "   - Nginx       : 85"  | tee -a log-install.txt
-echo "   - PPTP VPN    : 1732"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Informasi Tools Dalam Server"  | tee -a log-install.txt
-echo "   - htop"  | tee -a log-install.txt
-echo "   - iftop"  | tee -a log-install.txt
-echo "   - mtr"  | tee -a log-install.txt
-echo "   - nethogs"  | tee -a log-install.txt
-echo "   - screenfetch"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Informasi Premium Script"  | tee -a log-install.txt
-echo "   Perintah untuk menampilkan daftar perintah: menu"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "   Penjelasan script dan setup VPS"| tee -a log-install.txt
-echo "   dapat dilihat di: http://bit.ly/penjelasansetup"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "Informasi Penting"  | tee -a log-install.txt
-echo "   - Download Config OpenVPN : http://$MYIP:85/client.ovpn"  | tee -a log-install.txt
-echo "     Mirror (*.tar.gz)       : http://$MYIP:85/openvpn.tar.gz"  | tee -a log-install.txt
-echo "   - Webmin                  : http://$MYIP:10000/"  | tee -a log-install.txt
-echo "   - Vnstat                  : http://$MYIP:85/vnstat/"  | tee -a log-install.txt
-echo "   - MRTG                    : http://$MYIP:85/mrtg/"  | tee -a log-install.txt
-echo "   - Log Instalasi           : cat /root/log-install.txt"  | tee -a log-install.txt
-echo "     NB: User & Password Webmin adalah sama dengan user & password root"  | tee -a log-install.txt
-echo ""  | tee -a log-install.txt
-echo "----------- Script Created By Steven Indarto(fb.com/stevenindarto2) ------------"
+
+echo "----------- Script Created By Here bird lnwshop (fb.com/ceolnw) ------------"
